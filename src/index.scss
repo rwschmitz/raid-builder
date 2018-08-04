@@ -1,5 +1,44 @@
+/* Define project variables */
+
+// Font families
+
+$heading: 'Fira Sans', sans-serif; // Available weights: 400, 600
+$body: 'Montserrat, sans-serif';   // Available weights: 400, 500
+
+// Colors
+
+// Monochrome colors
+
+$white:        #fff;
+$light-gray:   #d1d1d1;
+$outer-space:  #464646;
+$eerie-black:  #181818;
+$black:        #000;
+
+// Colors palette
+
+$radical-red: #ff3366;
+$tufts-blue:  #4062bb;
+$eggshell:    #f1e9da;
+
+/* Define default colors */
+
 body {
+  color: $eerie-black;
+}
+
+/* Define spacing and sizes */
+
+body, ul, li {
+  line-height: 1.4;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading;
+}
+
+a, li, p, span {
+  font-family: $body;
 }

@@ -24,6 +24,12 @@ The raid buidler tool will accomplish the following:
 - JavaScript
 - React
 
+##### Design Patterns
+
+- Wrappers can wrap multiple containers
+- Containers can wrap multiple elements
+- General flow:  Wrappers -> Containers -> Content
+
 ---
 
 #### Patch Notes
