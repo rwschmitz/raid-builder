@@ -1,7 +1,9 @@
 .headline {
-  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  width: 100%;
 }
-.headline--regular {
+.headline--reg {
   font-weight: 400;
 }
 .headline--bold {
@@ -15,7 +17,33 @@
 }
 .headline--sm {
   font-size: 16px;
+  font-family: $body;
+  letter-spacing: 1px;
 }
 .headline--xs {
   font-size: 12px;
+}
+.headline--center {
+  text-align: center;
+}
+.headline--bb {
+  border-bottom: 1px solid $tufts-blue;
+}
+.headline--pseudo {
+  &:before,
+  &:after {
+    background-color: $eerie-black;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 17.5%;
+    width: 35%;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
 }

@@ -3,7 +3,7 @@
 // Font families
 
 $heading: 'Fira Sans', sans-serif; // Available weights: 400, 600
-$body: 'Montserrat, sans-serif';   // Available weights: 400, 500
+$body: 'Montserrat', sans-serif;   // Available weights: 400, 500
 
 // Colors
 
@@ -21,6 +21,15 @@ $radical-red: #ff3366;
 $tufts-blue:  #4062bb;
 $eggshell:    #f1e9da;
 
+/* Set box-sizing */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* Define default colors */
 
 body {
@@ -29,7 +38,7 @@ body {
 
 /* Define spacing and sizes */
 
-body, ul, li {
+body, h1, h2, h3, h4, h5, h6, ul, li, a, p, span {
   line-height: 1.4;
   margin: 0;
   padding: 0;
@@ -42,3 +51,16 @@ h1, h2, h3, h4, h5, h6 {
 a, li, p, span {
   font-family: $body;
 }
+
+a {
+  text-decoration: none;
+}
+
+@import './styles/buttons.scss';
+@import './styles/containers.scss';
+@import './styles/headings.scss';
+@import './styles/line-height.scss';
+@import './styles/margin.scss';
+@import './styles/padding.scss';
+@import './styles/text.scss';
+@import './styles/wrappers.scss';

@@ -7,6 +7,22 @@
 .container--w {
   flex-wrap: wrap;
 }
+.container--3 {
+  width: 33%;
+}
+.container--4 {
+  width: 25%;
+}
+.container--5 {
+  width: 20%;
+}
 .container--jcc {
   justify-content: center;
+}
+.container--jcsb {
+  justify-content: space-between;
+}
+.container--card {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
