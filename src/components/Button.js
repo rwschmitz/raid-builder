@@ -5,7 +5,7 @@ class Button extends React.Component {
   render() {
     const { content } = this.props;
     return (
-      <a className="button button--link p05 pl1 pr1" href="/">{ content }</a>
+      <a href="/">{ content }</a>
     );
   }
 }

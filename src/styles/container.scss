@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+}
+.container__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1600px;
+}

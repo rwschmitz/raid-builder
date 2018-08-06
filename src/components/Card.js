@@ -2,19 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tiertiaryline from './Tertiaryline';
 import Button from './Button';
-import '../styles/containers.css';
-import '../styles/headings.css';
 
 class Card extends React.Component {
   render() {
-    const { content, buttonContent, headlineContent, headlineStyles } = this.props;
+    const { content, buttonContent, headlineContent } = this.props;
     return (
-      <div className="container container--w container--jcc container--4 container--card p2 pr3 pl3">
+      <div className="">
         <Tiertiaryline
           content={ headlineContent }
-          styles={ headlineStyles }
         />
-        <p className="lh20 tac pr2 pb2 pl2">{ content }</p>
+        <p className="">{ content }</p>
         <Button
           content={ buttonContent }
         />
@@ -25,13 +22,8 @@ class Card extends React.Component {
 
 export default Card;
 
-Card.defaultProps = {
-  headlineStyles: ''
-}
-
 Card.propTypes = {
   buttonContent: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  headlineContent: PropTypes.string.isRequired,
-  headlineStyles: PropTypes.string
+  headlineContent: PropTypes.string.isRequired
 }

@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/containers.css';
-import '../styles/headings.css';
 
 class Headline extends React.Component {
   render() {
-    const { content, styles } = this.props;
+    const { content } = this.props;
     return (
-      <div className="container container--w container--jcc">
-        <h1 className={ `${styles}` }>{ content }</h1>
+      <div className="">
+        <h1 className="">{ content }</h1>
       </div>
     );
   }
@@ -16,11 +14,6 @@ class Headline extends React.Component {
 
 export default Headline;
 
-Headline.defaultProps = {
-  styles: ''
-}
-
 Headline.propTypes = {
-  content: PropTypes.string.isRequired,
-  styles: PropTypes.string
+  content: PropTypes.string.isRequired
 }

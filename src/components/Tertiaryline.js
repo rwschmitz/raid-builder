@@ -1,27 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/containers.css';
-import '../styles/headings.css';
-import '../styles/padding.css';
 
-class Tertiary extends React.Component {
+class Tertiaryline extends React.Component {
   render() {
-    const { content, styles } = this.props;
+    const { content } = this.props;
     return (
-      <div className="container container--w">
-        <h3 className={ `${ styles }` }>{ content }</h3>
+      <div className="">
+        <h3 className="">{ content }</h3>
       </div>
     );
   }
 }
 
-export default Tertiary;
+export default Tertiaryline;
 
-Tertiary.defaultProps = {
-  styles: ''
-}
-
-Tertiary.propTypes = {
-  content: PropTypes.string.isRequired,
-  styles: PropTypes.string
+Tertiaryline.propTypes = {
+  content: PropTypes.string.isRequired
 }
