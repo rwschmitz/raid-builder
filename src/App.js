@@ -128,6 +128,9 @@ class App extends React.Component {
       chars.sort();
       return chars; 
     }
+
+
+
     return (
       <div className="">
         <div className="">

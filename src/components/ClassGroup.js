@@ -1,27 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Checkbox from './Checkbox';
 import '../styles/card.css';
 
 class ClassGroup extends React.Component {
-  state = {
-    isChecked: false
-  }
   render() {
-    const { characters, characterClass } = this.props;
 
-    const monitorCheck = () => {
-      this.setState({
-        isChecked: !this.state.isChecked
-      });
-      console.log(this.state.isChecked);
-    }
+    const { characters, characterClass } = this.props;
 
     const generateCharacters = chars => {
     const character = chars.map(item =>
       (
         <li className="card__menu-item-container" key={ `${item}-list-item` }>
           <span className="card__menu-item" key={ `${item}-span-item` }>{ item }</span>
-          <input type="checkbox" onChange={ monitorCheck } />
+          <Checkbox label={ item } />
         </li>
       )
     );
