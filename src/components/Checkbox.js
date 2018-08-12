@@ -16,5 +16,6 @@ class Checkbox extends React.Component {
 export default Checkbox;
 
 Checkbox.propTypes = {
+  character: PropTypes.string.isRequired,
   monitorCheck: PropTypes.func.isRequired
 }

@@ -23,7 +23,7 @@ class App extends React.Component {
     druids:       [],
     demonHunters: [],
     selectedChars: {},
-    isChecked: false
+    displayChars: []
   }
 
   componentDidMount() {
@@ -132,15 +132,27 @@ class App extends React.Component {
     }
 
     const monitorCheck = (character) => {
-      const copiedObj = { ...this.state.selectedChars }
-      copiedObj[`${character}`] = character
+
+      const activeCharacters = { ...this.state.selectedChars }
+      activeCharacters[`${character}`] = character
+
       this.setState({
-        selectedChars: copiedObj
+        selectedChars: activeCharacters
       });
+
+      const uniqueChar = Object.keys(activeCharacters).find(selectedCharacter => selectedCharacter === character);
+      const copiedChars = [ ...this.state.displayChars ];
+      const charSet = new Set(copiedChars);
+
+      if(!charSet.has(character)) {
+        copiedChars.push(uniqueChar);
+      }
+
+      this.setState({
+        displayChars: copiedChars
+      });
+
     }
-
-
-
 
     return (
       <div className="">
@@ -179,6 +191,7 @@ class App extends React.Component {
           <div className="container__wrapper">
             <Card
               headlineContent="Selected Characters"
+              content={ this.state.displayChars }
             />
           </div>
         </div> {/* END Selected Characters Card */}

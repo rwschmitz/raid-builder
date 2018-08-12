@@ -16,7 +16,6 @@ class Card extends React.Component {
         <Button
           content={ buttonContent }
         />
-        <h4>{ this.props.isChecked }</h4>
       </div>
     );
   }
