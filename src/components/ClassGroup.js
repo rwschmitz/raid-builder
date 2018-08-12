@@ -13,7 +13,7 @@ class ClassGroup extends React.Component {
       (
         <li className="card__menu-item-container" key={ `${item}-list-item` }>
           <span className="card__menu-item" key={ `${item}-span-item` }>{ item }</span>
-          <Checkbox label={ item } />
+          <Checkbox />
         </li>
       )
     );
