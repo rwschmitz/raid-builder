@@ -23,6 +23,7 @@
     "no-tabs": 0,
     "no-unexpected-multiline": 0,
     "quotes": 0,
+    "arrow-body-style": "off",
     "array-bracket-newline": "off",
     "array-bracket-spacing": "off",
     "array-element-newline": "off",

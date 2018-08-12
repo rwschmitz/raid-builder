@@ -3,7 +3,8 @@ import Switch from '@material-ui/core/Switch';
 
 class Checkbox extends React.Component {
   state = {
-    isChecked: false
+    isChecked: false,
+    selectedCharacters: []
   }
   render() {
 

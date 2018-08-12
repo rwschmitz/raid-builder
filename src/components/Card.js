@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tiertiaryline from './Tertiaryline';
 import Button from './Button';
+import '../styles/card.css';
 
 class Card extends React.Component {
   render() {
     const { content, buttonContent, headlineContent } = this.props;
     return (
-      <div className="">
+      <div className="card">
         <Tiertiaryline
           content={ headlineContent }
         />
@@ -22,8 +23,13 @@ class Card extends React.Component {
 
 export default Card;
 
+Card.defaultProps = {
+  buttonContent: '',
+  content: ''
+}
+
 Card.propTypes = {
-  buttonContent: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  buttonContent: PropTypes.string,
+  content: PropTypes.string,
   headlineContent: PropTypes.string.isRequired
 }

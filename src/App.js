@@ -21,7 +21,7 @@ class App extends React.Component {
     warlocks:     [],
     monks:        [],
     druids:       [],
-    demonHunters: [],
+    demonHunters: []
   }
 
   componentDidMount() {
@@ -133,81 +133,98 @@ class App extends React.Component {
 
     return (
       <div className="">
-        <div className="">
-          <Headline
-            content="Raid Builder"
-          />
-          <Subheadline
-            content="A Flexible Strategy Tool"
-          />
-          <Card
-            buttonContent="Go!"
-            headlineContent="Custom."
-            content="Import your guild members, straight from Blizzard."
-          />
-          <Card
-            buttonContent="Go!"
-            headlineContent="Filtering."
-            content="Filter by class, spec, role and/or attack type."
-          />
-          <Card
-            buttonContent="Go!"
-            headlineContent="Smart."
-            content="Set a raid composition per boss, per raid."
-          />
-          <div className="container">
-            <div className="container__wrapper">
-              <ClassGroup
-                characters={ generateCharacters(warriors) }
-                characterClass="Warriors"
-              />
-              <ClassGroup
-                characters={ generateCharacters(paladins) }
-                characterClass="Paladins"
-              />
-              <ClassGroup
-                characters={ generateCharacters(hunters) }
-                characterClass="Hunters"
-              />
-              <ClassGroup
-                characters={ generateCharacters(rogues) }
-                characterClass="Rogues"
-              />
-              <ClassGroup
-                characters={ generateCharacters(priests) }
-                characterClass="Priests"
-              />
-              <ClassGroup
-                characters={ generateCharacters(deathKnights) }
-                characterClass="Death Knights"
-              />
-              <ClassGroup
-                characters={ generateCharacters(shamans) }
-                characterClass="Shamans"
-              />
-              <ClassGroup
-                characters={ generateCharacters(mages) }
-                characterClass="Mages"
-              />
-              <ClassGroup
-                characters={ generateCharacters(warlocks) }
-                characterClass="Warlocks"
-              />
-              <ClassGroup
-                characters={ generateCharacters(monks) }
-                characterClass="Monks"
-              />
-              <ClassGroup
-                characters={ generateCharacters(druids) }
-                characterClass="Druids"
-              />
-              <ClassGroup
-                characters={ generateCharacters(demonHunters) }
-                characterClass="Demon Hunters"
-              />
-            </div>
+        <div className="container">
+          <div className="container__wrapper">
+            <Headline
+              content="Raid Builder"
+            />
+            <Subheadline
+              content="A Flexible Strategy Tool"
+            />
           </div>
-        </div>
+        </div> {/* END Intro Headlines */}
+
+        <div className="container">
+          <div className="container__wrapper">
+            <Card
+              buttonContent="Go!"
+              headlineContent="Custom."
+              content="Import your guild members, straight from Blizzard."
+            />
+            <Card
+              buttonContent="Go!"
+              headlineContent="Filtering."
+              content="Filter by class, spec, role and/or attack type."
+            />
+            <Card
+              buttonContent="Go!"
+              headlineContent="Smart."
+              content="Set a raid composition per boss, per raid."
+            />
+          </div>
+        </div> {/* END Cards Explaining Site */}
+
+        <div className="container">
+          <div className="container__wrapper">
+            <Card
+              headlineContent="Selected Characters"
+            />
+          </div>
+        </div> {/* END Selected Characters Card */}
+
+        <div className="container">
+          <div className="container__wrapper">
+            <ClassGroup
+              characters={ generateCharacters(warriors) }
+              characterClass="Warriors"
+            />
+            <ClassGroup
+              characters={ generateCharacters(paladins) }
+              characterClass="Paladins"
+            />
+            <ClassGroup
+              characters={ generateCharacters(hunters) }
+              characterClass="Hunters"
+            />
+            <ClassGroup
+              characters={ generateCharacters(rogues) }
+              characterClass="Rogues"
+            />
+            <ClassGroup
+              characters={ generateCharacters(priests) }
+              characterClass="Priests"
+            />
+            <ClassGroup
+              characters={ generateCharacters(deathKnights) }
+              characterClass="Death Knights"
+            />
+            <ClassGroup
+              characters={ generateCharacters(shamans) }
+              characterClass="Shamans"
+            />
+            <ClassGroup
+              characters={ generateCharacters(mages) }
+              characterClass="Mages"
+            />
+            <ClassGroup
+              characters={ generateCharacters(warlocks) }
+              characterClass="Warlocks"
+            />
+            <ClassGroup
+              characters={ generateCharacters(monks) }
+              characterClass="Monks"
+            />
+            <ClassGroup
+              characters={ generateCharacters(druids) }
+              characterClass="Druids"
+            />
+            <ClassGroup
+              characters={ generateCharacters(demonHunters) }
+              characterClass="Demon Hunters"
+            />
+          </div>
+        </div> {/* END Class Groups */}
+
       </div>
     );
   }

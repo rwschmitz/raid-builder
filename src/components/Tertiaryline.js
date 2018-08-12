@@ -5,9 +5,9 @@ class Tertiaryline extends React.Component {
   render() {
     const { content } = this.props;
     return (
-      <div className="">
+      <React.Fragment>
         <h3 className="">{ content }</h3>
-      </div>
+      </React.Fragment>
     );
   }
 }
