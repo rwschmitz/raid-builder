@@ -6,14 +6,14 @@ import '../styles/card.css';
 class ClassGroup extends React.Component {
   render() {
 
-    const { characters, characterClass } = this.props;
+    const { characters, characterClass, monitorCheck } = this.props;
 
     const generateCharacters = chars => {
     const character = chars.map(item =>
       (
         <li className="card__menu-item-container" key={ `${item}-list-item` }>
           <span className="card__menu-item" key={ `${item}-span-item` }>{ item }</span>
-          <Checkbox />
+          <Checkbox character={ item } monitorCheck={ monitorCheck } />
         </li>
       )
     );
@@ -34,5 +34,6 @@ export default ClassGroup;
 
 ClassGroup.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.string).isRequired,
-  characterClass: PropTypes.string.isRequired
+  characterClass: PropTypes.string.isRequired,
+  monitorCheck: PropTypes.func.isRequired
 }

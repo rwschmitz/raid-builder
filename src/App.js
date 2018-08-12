@@ -21,7 +21,9 @@ class App extends React.Component {
     warlocks:     [],
     monks:        [],
     druids:       [],
-    demonHunters: []
+    demonHunters: [],
+    selectedChars: {},
+    isChecked: false
   }
 
   componentDidMount() {
@@ -129,6 +131,15 @@ class App extends React.Component {
       return chars; 
     }
 
+    const monitorCheck = (character) => {
+      const copiedObj = { ...this.state.selectedChars }
+      copiedObj[`${character}`] = character
+      this.setState({
+        selectedChars: copiedObj
+      });
+    }
+
+
 
 
     return (
@@ -177,50 +188,62 @@ class App extends React.Component {
             <ClassGroup
               characters={ generateCharacters(warriors) }
               characterClass="Warriors"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(paladins) }
               characterClass="Paladins"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(hunters) }
               characterClass="Hunters"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(rogues) }
               characterClass="Rogues"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(priests) }
               characterClass="Priests"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(deathKnights) }
               characterClass="Death Knights"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(shamans) }
               characterClass="Shamans"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(mages) }
               characterClass="Mages"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(warlocks) }
               characterClass="Warlocks"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(monks) }
               characterClass="Monks"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(druids) }
               characterClass="Druids"
+              monitorCheck={ monitorCheck }
             />
             <ClassGroup
               characters={ generateCharacters(demonHunters) }
               characterClass="Demon Hunters"
+              monitorCheck={ monitorCheck }
             />
           </div>
         </div> {/* END Class Groups */}

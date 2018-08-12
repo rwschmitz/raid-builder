@@ -1,25 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Switch from '@material-ui/core/Switch';
 
 class Checkbox extends React.Component {
-  state = {
-    isChecked: false,
-    selectedCharacters: []
-  }
   render() {
-
-    const monitorCheck = () => {
-      this.setState({
-        isChecked: !this.state.isChecked
-      });
-    }
-
+    const { character, monitorCheck } = this.props;
     return (
       <React.Fragment>
-        <Switch onChange={ monitorCheck } checked={ this.state.isChecked } color="primary" />
+        <Switch onClick={ () => monitorCheck(character) } color="primary" />
       </React.Fragment>
     );
   }
 }
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  monitorCheck: PropTypes.func.isRequired
+}
