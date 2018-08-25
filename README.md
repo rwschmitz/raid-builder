@@ -2,8 +2,8 @@
 
 ## Version
 
-- Current version:  0.1.0
-- Last updated:  8/3/2018
+- Current version:  0.2.0
+- Last updated:  8/24/2018
 
 ### Purpose
 
@@ -43,6 +43,10 @@ The raid buidler tool will accomplish the following:
 ---
 
 #### Patch Notes
+
+##### 0.2.0
+
+- Add functionality to delete character, if character is already added.
 
 ##### 0.1.0
 

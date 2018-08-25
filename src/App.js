@@ -10,7 +10,7 @@ import './styles/container.css';
 class App extends React.Component {
 
   state = {
-    warriors:     [], 
+    warriors:     [],
     paladins:     [],
     hunters:      [],
     rogues:       [],
@@ -24,6 +24,7 @@ class App extends React.Component {
     demonHunters: [],
     selectedChars: {},
     displayChars: []
+    // isChecked: false
   }
 
   componentDidMount() {
@@ -37,7 +38,7 @@ class App extends React.Component {
         reject(Error('Promise failed to return'));
       });
     }
-    
+
     const setCharacterInformation = async () => {
       const warriors     = [];
       const paladins     = [];
@@ -124,14 +125,14 @@ class App extends React.Component {
 
   render() {
     const { warriors, paladins, hunters, rogues, priests, deathKnights, shamans, mages, warlocks, monks, druids, demonHunters } = this.state;
-    
+
     const generateCharacters = wowClass => {
       const chars = wowClass.map(item => item.characterName);
       chars.sort();
-      return chars; 
+      return chars;
     }
 
-    const monitorCheck = (character) => {
+    const monitorCheck = (character, check) => {
 
       const activeCharacters = { ...this.state.selectedChars }
       activeCharacters[`${character}`] = character
@@ -140,18 +141,20 @@ class App extends React.Component {
         selectedChars: activeCharacters
       });
 
-      const uniqueChar = Object.keys(activeCharacters).find(selectedCharacter => selectedCharacter === character);
       const copiedChars = [ ...this.state.displayChars ];
       const charSet = new Set(copiedChars);
 
       if(!charSet.has(character)) {
-        copiedChars.push(uniqueChar);
+        charSet.add(character);
       }
 
-      this.setState({
-        displayChars: copiedChars
-      });
+      if(charSet.has(character) && check === true) {
+          charSet.delete(character);
+        }
 
+      this.setState({
+        displayChars: charSet
+      });
     }
 
     return (
