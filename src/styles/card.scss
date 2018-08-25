@@ -25,6 +25,49 @@
 .card__menu-item {
   padding-bottom: 0.75rem;
 }
+
+
+.warrior {
+  background-color: lighten(#c79c6e, 10%);
+}
+.paladin {
+  background-color: lighten(#f58cba, 10%);
+}
+.hunter {
+  background-color: lighten(#abd473, 10%);
+}
+.rogue {
+  background-color: lighten(#fff569, 10%);
+}
+.priest {
+  background-color: lighten(#ffffff, 10%);
+}
+.death-knight {
+  background-color: lighten(#c41f3b, 10%);
+}
+.shaman {
+  background-color: lighten(#0070de, 10%);
+}
+.mage {
+  background-color: lighten(#40c7eb, 10%);
+}
+.warlock {
+  background-color: lighten(#8787ed, 10%);
+}
+.monk {
+  background-color: lighten(#00ff96, 10%);
+}
+.druid {
+  background-color: lighten(#ff7d0a, 10%);
+}
+.demon-hunter {
+  background-color: lighten(#a330c9, 10%);
+}
+
+
+
+
+
 @media (min-width: 800px) {
   .card {
     max-width: 45%;

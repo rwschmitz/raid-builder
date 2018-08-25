@@ -3,6 +3,7 @@ import Headline from './components/Headline';
 import Subheadline from './components/Subheadline';
 import Card from './components/Card';
 import ClassGroup from './components/ClassGroup';
+import SelectedChars from './components/SelectedChars';
 import './App.css';
 import './styles/container.css';
 
@@ -24,7 +25,6 @@ class App extends React.Component {
     demonHunters: [],
     selectedChars: {},
     displayChars: []
-    // isChecked: false
   }
 
   componentDidMount() {
@@ -55,62 +55,62 @@ class App extends React.Component {
       const res = await fetchGuildFromBlizzard();
       const data = await res.json();
       for(let i = 0; i < data.members.length; i+=1) {
-        if(data.members[i].character.level >= 110 && data.members[i].character.class === 1) {
+        if(data.members[i].character.level >= 120 && data.members[i].character.class === 1) {
           warriors.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 2) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 2) {
           paladins.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 3) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 3) {
           hunters.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 4) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 4) {
           rogues.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 5) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 5) {
           priests.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 6) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 6) {
           deathKnights.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 7) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 7) {
           shamans.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 8) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 8) {
           mages.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 9) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 9) {
           warlocks.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 10) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 10) {
           monks.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 11) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 11) {
           druids.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
           });
-        } else if(data.members[i].character.level >= 110 && data.members[i].character.class === 12) {
+        } else if(data.members[i].character.level >= 120 && data.members[i].character.class === 12) {
           demonHunters.push({
             characterName: data.members[i].character.name,
             characterClass: data.members[i].character.class
@@ -124,7 +124,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { warriors, paladins, hunters, rogues, priests, deathKnights, shamans, mages, warlocks, monks, druids, demonHunters } = this.state;
+    const { warriors, paladins, hunters, rogues, priests, deathKnights, shamans, mages, warlocks, monks, druids, demonHunters, selectedChars, displayChars } = this.state;
 
     const generateCharacters = wowClass => {
       const chars = wowClass.map(item => item.characterName);
@@ -134,14 +134,14 @@ class App extends React.Component {
 
     const monitorCheck = (character, check) => {
 
-      const activeCharacters = { ...this.state.selectedChars }
+      const activeCharacters = { selectedChars }
       activeCharacters[`${character}`] = character
 
       this.setState({
         selectedChars: activeCharacters
       });
 
-      const copiedChars = [ ...this.state.displayChars ];
+      const copiedChars = [ ...displayChars ];
       const charSet = new Set(copiedChars);
 
       if(!charSet.has(character)) {
@@ -168,7 +168,7 @@ class App extends React.Component {
               content="A Flexible Strategy Tool"
             />
           </div>
-        </div> {/* END Intro Headlines */}
+        </div>
 
         <div className="container">
           <div className="container__wrapper">
@@ -188,16 +188,16 @@ class App extends React.Component {
               content="Set a raid composition per boss, per raid."
             />
           </div>
-        </div> {/* END Cards Explaining Site */}
+        </div>
 
         <div className="container">
           <div className="container__wrapper">
-            <Card
+            <SelectedChars
               headlineContent="Selected Characters"
-              content={ this.state.displayChars }
+              characters={ displayChars }
             />
           </div>
-        </div> {/* END Selected Characters Card */}
+        </div>
 
         <div className="container">
           <div className="container__wrapper">
@@ -205,64 +205,76 @@ class App extends React.Component {
               characters={ generateCharacters(warriors) }
               characterClass="Warriors"
               monitorCheck={ monitorCheck }
+              classColor='warrior'
             />
             <ClassGroup
               characters={ generateCharacters(paladins) }
               characterClass="Paladins"
               monitorCheck={ monitorCheck }
+              classColor='paladin'
             />
             <ClassGroup
               characters={ generateCharacters(hunters) }
               characterClass="Hunters"
               monitorCheck={ monitorCheck }
+              classColor='hunter'
             />
             <ClassGroup
               characters={ generateCharacters(rogues) }
               characterClass="Rogues"
               monitorCheck={ monitorCheck }
+              classColor='rogue'
             />
             <ClassGroup
               characters={ generateCharacters(priests) }
               characterClass="Priests"
               monitorCheck={ monitorCheck }
+              classColor='priest'
             />
             <ClassGroup
               characters={ generateCharacters(deathKnights) }
               characterClass="Death Knights"
               monitorCheck={ monitorCheck }
+              classColor='death-knight'
             />
             <ClassGroup
               characters={ generateCharacters(shamans) }
               characterClass="Shamans"
               monitorCheck={ monitorCheck }
+              classColor='shaman'
             />
             <ClassGroup
               characters={ generateCharacters(mages) }
               characterClass="Mages"
               monitorCheck={ monitorCheck }
+              classColor='mage'
             />
             <ClassGroup
               characters={ generateCharacters(warlocks) }
               characterClass="Warlocks"
               monitorCheck={ monitorCheck }
+              classColor='warlock'
             />
             <ClassGroup
               characters={ generateCharacters(monks) }
               characterClass="Monks"
               monitorCheck={ monitorCheck }
+              classColor='monk'
             />
             <ClassGroup
               characters={ generateCharacters(druids) }
               characterClass="Druids"
               monitorCheck={ monitorCheck }
+              classColor='druid'
             />
             <ClassGroup
               characters={ generateCharacters(demonHunters) }
               characterClass="Demon Hunters"
               monitorCheck={ monitorCheck }
+              classColor='demon-hunter'
             />
           </div>
-        </div> {/* END Class Groups */}
+        </div>
 
       </div>
     );

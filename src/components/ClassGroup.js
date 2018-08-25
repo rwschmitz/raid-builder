@@ -20,7 +20,7 @@ class ClassGroup extends React.Component {
       return character;
     }
     return (
-      <div className="card">
+      <div className={ `card ${this.props.classColor}` }>
         <h3 className="card__headline">{ characterClass }</h3>
         <ul className="card__menu">
           { generateCharacters(characters) }
